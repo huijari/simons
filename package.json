@@ -1,0 +1,23 @@
+{
+  "name": "simons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huijari/simons.git"
+  },
+  "author": "huijari",
+  "license": "GPL3",
+  "bugs": {
+    "url": "https://github.com/huijari/simons/issues"
+  },
+  "homepage": "https://github.com/huijari/simons#readme",
+  "dependencies": {
+    "got": "^9.3.2",
+    "micro": "^9.3.3"
+  }
+}

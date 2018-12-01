@@ -1,0 +1,6 @@
+{
+	"alias": ["huijari_simons"],
+	"env": {
+		"BOT_KEY": "@bot_key"
+	}
+}
