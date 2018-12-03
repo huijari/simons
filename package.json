@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/huijari/simons#readme",
   "dependencies": {
-    "got": "^9.3.2"
+    "got": "^9.3.2",
+    "raw-body": "^2.3.3"
+  },
+  "devDependencies": {
+    "micro": "^9.3.3",
+    "micro-dev": "^3.0.0"
   }
 }
