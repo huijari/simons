@@ -1,5 +1,5 @@
 {
+  "version": 1,
   "alias": ["huijari-simons"],
-  "env": { "BOT_KEY": "@bot_key" },
-  "builds": [{ "src": "index.js", "use": "@now/node" }]
+  "env": { "BOT_KEY": "@bot_key" }
 }
