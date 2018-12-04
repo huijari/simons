@@ -31,5 +31,8 @@
     "semi": false,
     "singleQuote": true,
     "useTabs": true
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
