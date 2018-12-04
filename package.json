@@ -21,7 +21,6 @@
   "dependencies": {
     "got": "^9.3.2",
     "micro": "^9.3.3",
-    "raw-body": "^2.3.3",
     "telegraf": "^3.25.0"
   },
   "devDependencies": {

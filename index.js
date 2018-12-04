@@ -1,5 +1,5 @@
-const getRawBody = require('raw-body')
 const Telegram = require('telegraf/telegram')
+const { json } = require('micro')
 
 const run = require('./src/run')
 
@@ -10,13 +10,9 @@ function reply(chat, message, text) {
 	})
 }
 
-async function json(request) {
-	const body = await getRawBody(request, { encoding: true })
-	return JSON.parse(body)
-}
-
 async function handler(request, response) {
 	const { message } = await json(request)
+
 	if (message && message.text) {
 		const values = await run(message)
 		if (values.length !== 0) {
@@ -25,7 +21,7 @@ async function handler(request, response) {
 		}
 	}
 
-	response.end()
+	return ''
 }
 
 module.exports = handler
