@@ -13,7 +13,7 @@
     "url": "git+https://github.com/huijari/simons.git"
   },
   "author": "huijari",
-  "license": "GPL3",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/huijari/simons/issues"
   },
