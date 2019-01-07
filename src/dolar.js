@@ -4,10 +4,9 @@ let cachedPtax = null
 async function getPtax() {
 	if (cachedPtax !== null) return cachedPtax
 
-	const url =
-		'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D"https%3A%2F%2Fwww.bcb.gov.br%2Fapi%2Fconteudo%2Fpt-br%2FPAINEL_INDICADORES%2Fcambio%3F2018091717"&format=json'
+	const url = 'https://www.bcb.gov.br/api/conteudo/pt-br/PAINEL_INDICADORES/cambio?2018091717'
 	const response = await got(url, { json: true })
-	const { valorVenda } = response.body.query.results.json.conteudo.find(
+	const { valorVenda } = response.body.conteudo.find(
 		({ moeda, tipoCotacao }) =>
 			moeda === 'Dólar' && tipoCotacao === 'Fechamento'
 	)
