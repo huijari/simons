@@ -6,7 +6,8 @@ const run = require('./src/run')
 const telegram = new Telegram(process.env.BOT_KEY)
 function reply(chat, message, text) {
 	telegram.sendMessage(chat, text, {
-		reply_to_message_id: message
+		reply_to_message_id: message,
+		parse_mode: 'Markdown'
 	})
 }
 
