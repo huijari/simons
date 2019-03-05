@@ -1,25 +1,10 @@
-const got = require('got')
-
-let cachedPtax = null
-async function getPtax() {
-	if (cachedPtax !== null) return cachedPtax
-
-	const url = 'https://www.bcb.gov.br/api/conteudo/pt-br/PAINEL_INDICADORES/cambio?2018091717'
-	const response = await got(url, { json: true })
-	const { valorVenda } = response.body.conteudo.find(
-		({ moeda, tipoCotacao }) =>
-			moeda === 'Dólar' && tipoCotacao === 'Fechamento'
-	)
-
-	cachedPtax = valorVenda
-	return valorVenda
-}
+const getPtax = require('./ptax')
 
 async function Converter() {
-	const ptax = await getPtax()
+	const { dolar } = await getPtax()
 	const spread = 1.04
 	const iof = 1.0638
-	return value => value * ptax * spread * iof
+	return value => value * dolar * spread * iof
 }
 
 function brl(value) {
@@ -55,3 +40,5 @@ async function parse(text) {
 }
 
 module.exports = parse
+module.exports.Converter = Converter
+module.exports.brl = brl
