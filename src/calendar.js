@@ -21,7 +21,7 @@ function dates(year, month) {
 }
 
 async function parse(text) {
-	const pattern = /^cal( (\d+))?/
+	const pattern = /^cal( (\d+))?$/
 	const match = pattern.exec(text)
 	if (match === null) return []
 
