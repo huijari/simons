@@ -21,16 +21,23 @@ function dates(year, month) {
 }
 
 async function parse(text) {
-	if (text !== 'cal') return []
+	const pattern = /cal( (\d+))?/
+	const match = pattern.exec(text)
+	if (match === null) return []
 
 	const today = new Date()
-	const raw = dates(today.getFullYear(), today.getMonth())
+	const month =
+		match[2] === undefined ? today.getMonth() : parseFloat(match[2]) - 1
+	if (month < 0 || month > 11) return []
+
+	const raw = dates(today.getFullYear(), month)
 
 	const weekView = week =>
 		week.map(day => (day === 0 ? '  ' : `${day}`.padStart(2))).join(' ')
 
 	const result = `\n\`\`\`\n${raw.map(weekView).join('\n')}\n\`\`\``
 
+	today.setMonth(month)
 	return [[today.toString().slice(4, 7), result]]
 }
 
