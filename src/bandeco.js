@@ -5,6 +5,7 @@ async function getCardapios(names) {
 	const token = process.env.FUMP_TOKEN
 	const { body } = await post(url, {
 		json: true,
+		timeout: 3000,
 		headers: {
 			Authorization: `Basic ${token}`
 		}
@@ -29,8 +30,12 @@ async function parse(text) {
 	const match = pattern.exec(text)
 	if (match === null) return []
 
-	const cardapios = await getCardapios(restaurants(match[1]))
-	return cardapios.map(view)
+	try {
+		const cardapios = await getCardapios(restaurants(match[1]))
+		return cardapios.map(view)
+	} catch {
+		return [['fump', 'request failed']]
+	}
 }
 
 module.exports = parse
