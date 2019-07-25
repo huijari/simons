@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/huijari/simons#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "got": "^9.3.2",
     "micro": "^9.3.3",
     "telegraf": "^3.25.0"

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const Telegram = require('telegraf/telegram')
 const { json } = require('micro')
 
