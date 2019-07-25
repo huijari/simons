@@ -35,7 +35,7 @@ async function parse(text) {
 	const weekView = week =>
 		week.map(day => (day === 0 ? '  ' : `${day}`.padStart(2))).join(' ')
 
-	const result = `\n\`\`\`\n${raw.map(weekView).join('\n')}\n\`\`\``
+	const result = `<code>\n${raw.map(weekView).join('\n')}</code>`
 
 	today.setMonth(month)
 	return [[today.toString().slice(4, 7), result]]
