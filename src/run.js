@@ -4,9 +4,21 @@ const dolar = require('./dolar')
 const euro = require('./euro')
 const twitter = require('./twitter')
 
+function parserRunner(text) {
+	return async parser => {
+		try {
+			return await parser(text)
+		} catch (error) {
+			console.error(error)
+			return [['error', 'I could not retrieve the data']]
+		}
+	}
+}
+
 async function run({ text }) {
+	const runner = parserRunner(text)
 	const parsers = [bandeco, calendar, dolar, euro, twitter]
-	const promisedResults = parsers.map(async parser => parser(text))
+	const promisedResults = parsers.map(runner)
 	const results = await Promise.all(promisedResults)
 	return results.flat()
 }
