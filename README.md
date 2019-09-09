@@ -68,6 +68,10 @@ UFMG's restaurant menu.
 
 `(twitter link)` - shows quoted and "in reply to" tweets.
 
+### weather.js
+
+`wttr@location` - shows the weather at `location`.
+
 ## Contributing
 
 Issues are welcomed but keep in mind that this bot is for my personal use.
