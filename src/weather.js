@@ -1,7 +1,7 @@
 const { get } = require('got')
 
 async function weather(location) {
-	const url = `https://wttr.in/${location}?format=1`
+	const url = `https://wttr.in/${location}?m&format=1`
 	const { body } = await get(url, {
 		timeout: 3000
 	})
@@ -16,7 +16,7 @@ async function parse(text) {
 	while ((match = pattern.exec(text)) !== null) {
 		try {
 			const location = match[1]
-			matches.push([`Weather at ${location}`, await weather(location)])
+			matches.push([`weather @ ${location}`, await weather(location)])
 		} catch {
 			matches.push(['wttr', 'request failed'])
 		}
