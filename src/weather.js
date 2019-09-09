@@ -9,13 +9,13 @@ async function weather(location) {
 }
 
 async function parse(text) {
-	const pattern = /wttr@([a-zA-Z_]+)/g
+	const pattern = /w(eather)?@([a-zA-Z_]+)/g
 
 	const matches = []
 	let match
 	while ((match = pattern.exec(text)) !== null) {
 		try {
-			const location = match[1]
+			const location = match[2]
 			matches.push([`weather @ ${location}`, await weather(location)])
 		} catch {
 			matches.push(['wttr', 'request failed'])

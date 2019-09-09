@@ -70,7 +70,7 @@ UFMG's restaurant menu.
 
 ### weather.js
 
-`wttr@location` - shows the weather at `location`.
+`w[eather]@location` - shows the weather at `location`.
 
 ## Contributing
 
