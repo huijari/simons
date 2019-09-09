@@ -27,6 +27,7 @@ or use a `.env` file.
 - `BOT_KEY`: telegram bot token.
 - `FUMP_TOKEN`: ufmg's fump services token.
 - `TWITTER_TOKEN`: twitter app token.
+- `DEBUG`: when present the server will print the message instead of sending it.
 
 ## Developing
 
@@ -39,6 +40,7 @@ npm run dev # hot reloading
 ```
 
 As it starts a local server you can send sample messages directly into it.
+Also, with the DEBUG variable on, you don't need to use real messages.
 
 ## Parsers
 
