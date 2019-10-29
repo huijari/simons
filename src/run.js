@@ -1,5 +1,6 @@
 const bandeco = require('./bandeco')
 const calendar = require('./calendar')
+const doguinho = require('./doguinho')
 const dolar = require('./dolar')
 const euro = require('./euro')
 const twitter = require('./twitter')
@@ -18,7 +19,7 @@ function parserRunner(text) {
 
 async function run({ text }) {
 	const runner = parserRunner(text)
-	const parsers = [bandeco, calendar, dolar, euro, twitter, weather]
+	const parsers = [bandeco, calendar, doguinho, dolar, euro, twitter, weather]
 	const promisedResults = parsers.map(runner)
 	const results = await Promise.all(promisedResults)
 	return results.flat()
