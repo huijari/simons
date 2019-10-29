@@ -9,7 +9,7 @@ async function getDog() {
         }
     })
 
-    return `<img src="${body[0].url}" />`
+    return `${body[0].url}`
 }
 
 async function parse(text) {
