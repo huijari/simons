@@ -34,6 +34,6 @@
     "useTabs": true
   },
   "engines": {
-    "node": "11.x"
+    "node": "12.x"
   }
 }
