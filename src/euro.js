@@ -12,12 +12,10 @@ async function parse(text) {
 	const rate = await getRate()
 	const converter = await Converter()
 
-	const matches = []
-	let match
-	while ((match = pattern.exec(text)) !== null) {
-		const value = converter(+match[1] * rate)
-		matches.push([match[0], brl(value)])
-	}
+	const matches = [...text.matchAll(pattern)].map(([match, value]) => [
+		match,
+		brl(converter(+value * rate))
+	])
 
 	return matches
 }

@@ -5,24 +5,21 @@ async function weather(location) {
 	const { body } = await get(url, {
 		timeout: 3000
 	})
-	return body
+	return body.slice(0, -1)
 }
 
 async function parse(text) {
-	const pattern = /w(eather)?@([a-zA-Z_]+)/g
+	const pattern = /w(?:eather)?@([a-zA-Z_]+)/g
 
-	const matches = []
-	let match
-	while ((match = pattern.exec(text)) !== null) {
+	const matches = [...text.matchAll(pattern)].map(async ([_, location]) => {
 		try {
-			const location = match[2]
-			matches.push([`weather @ ${location}`, await weather(location)])
+			return [`weather @ ${location}`, await weather(location)]
 		} catch {
-			matches.push(['wttr', 'request failed'])
+			return ['wttr', 'request failed']
 		}
-	}
+	})
 
-	return matches
+	return await Promise.all(matches)
 }
 
 module.exports = parse
