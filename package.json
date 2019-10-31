@@ -25,6 +25,7 @@
     "telegraf": "^3.25.0"
   },
   "devDependencies": {
+    "husky": "^3.0.9",
     "micro-dev": "^3.0.0",
     "prettier": "^1.15.3"
   },
@@ -35,5 +36,10 @@
   },
   "engines": {
     "node": "12.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && git add ."
+    }
   }
 }
