@@ -6,7 +6,7 @@ function renderNumber(number) {
 }
 
 async function parse(text) {
-	const pattern = /\$\$(.*)\$\$/g
+	const pattern = /\$\$([^$]*)\$\$/gm
 
 	const matches = [...text.matchAll(pattern)].map(async ([_, expression]) => {
 		try {
