@@ -20,13 +20,14 @@
   "homepage": "https://github.com/huijari/simons#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "got": "^9.6.0",
+    "got": "^11.8.0",
+    "mathjs": "^7.5.1",
     "micro": "^9.3.4",
     "telegraf": "^3.38.0"
   },
   "devDependencies": {
     "micro-dev": "^3.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^2.1.2"
   },
   "prettier": {
     "semi": false,
