@@ -4,7 +4,7 @@ async function stock(symbol, date) {
 	const url = `https://arquivos.b3.com.br/apinegocios/ticker/${symbol}/${date}`
 	const response = await get(url, {
 		responseType: 'json',
-		timeout: 3000
+		timeout: 15000
 	})
 	const body = JSON.parse(response.body)
 	return body.values[0][2]
