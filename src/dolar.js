@@ -27,8 +27,10 @@ function brl(value) {
 
 async function parse(text) {
 	const pattern = /([0-9]*\.[0-9]+|[0-9]+)\s*(d[oó]l[^\s]*|usd)/g
-	const converter = await Converter()
+	if (!pattern.test(text)) return []
+	pattern.lastIndex = 0
 
+	const converter = await Converter()
 	const matches = [...text.matchAll(pattern)].map(([match, value]) => [
 		match,
 		brl(converter(+value))

@@ -6,7 +6,7 @@ async function getPtax() {
 		const url =
 			'https://www.bcb.gov.br/api/conteudo/pt-br/PAINEL_INDICADORES/cambio?2018091717'
 		const {
-			body: { conteudo }
+			body: { conteudo },
 		} = await got(url, { json: true })
 
 		const dolar = conteudo.find(

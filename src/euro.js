@@ -8,10 +8,11 @@ async function getRate() {
 
 async function parse(text) {
 	const pattern = /([0-9]*\.[0-9]+|[0-9]+)\s*(eur)/g
+	if (!pattern.test(text)) return []
+	pattern.lastIndex = 0
 
 	const rate = await getRate()
 	const converter = await Converter()
-
 	const matches = [...text.matchAll(pattern)].map(([match, value]) => [
 		match,
 		brl(converter(+value * rate))
