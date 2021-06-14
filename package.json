@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/huijari/simons#readme",
   "dependencies": {
-    "cheerio": "*",
+    "cheerio": "^1.0.0-rc.10",
     "diacritic": "^0.0.2",
     "dotenv": "^8.2.0",
     "got": "^11.8.2",
@@ -37,6 +37,6 @@
     "useTabs": true
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   }
 }
