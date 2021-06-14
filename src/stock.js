@@ -2,11 +2,10 @@ const { get } = require('got')
 
 async function stock(symbol, date) {
 	const url = `https://arquivos.b3.com.br/apinegocios/ticker/${symbol}/${date}`
-	const response = await get(url, {
+	const { body } = await get(url, {
 		responseType: 'json',
 		timeout: 15000
 	})
-	const body = JSON.parse(response.body)
 	return body.values[0][2]
 }
 
@@ -50,7 +49,7 @@ async function parse(text) {
 			const percent = renderNumber((change < 0 ? 1 - change : change - 1) * 100)
 
 			return [`${symbol}`, `${prices[0]} ${delta} ${percent}%`]
-		} catch {
+		} catch (e) {
 			return ['b3', 'request failed']
 		}
 	})

@@ -3,13 +3,12 @@ const { post } = require('got')
 async function getCardapios(names) {
 	const url = 'http://minha.fump.ufmg.br/fumpWs/cardapioRU'
 	const token = process.env.FUMP_TOKEN
-	const { body } = await post(url, {
-		json: true,
+	const body = await post(url, {
 		timeout: 3000,
 		headers: {
-			Authorization: `Basic ${token}`
-		}
-	})
+			Authorization: `Basic ${token}`,
+		},
+	}).json()
 	return body.filter(({ restaurante }) => names.includes(restaurante))
 }
 

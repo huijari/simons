@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/huijari/simons#readme",
   "dependencies": {
+    "cheerio": "*",
+    "diacritic": "^0.0.2",
     "dotenv": "^8.2.0",
-    "got": "^9.6.0",
+    "got": "^11.8.2",
     "mathjs": "^7.5.1",
     "micro": "^9.3.4",
     "telegraf": "^3.38.0"

@@ -1,10 +1,5 @@
 const { evaluate } = require('mathjs')
 
-function renderNumber(number) {
-	if (number > 0) return `+${number.toFixed(2)}`
-	return `${number.toFixed(2)}`
-}
-
 async function parse(text) {
 	const pattern = /\$\$([^$]*)\$\$/gm
 
