@@ -6,6 +6,7 @@ const euro = require('./euro')
 const math = require('./math')
 const stock = require('./stock')
 const twitter = require('./twitter')
+const vaccine = require('./vaccine')
 const weather = require('./weather')
 
 function parserRunner(text) {
@@ -30,6 +31,7 @@ async function run({ text }) {
 		math,
 		stock,
 		twitter,
+		vaccine,
 		weather
 	]
 	const promisedResults = parsers.map(runner)

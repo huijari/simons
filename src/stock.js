@@ -49,7 +49,7 @@ async function parse(text) {
 			const percent = renderNumber((change < 0 ? 1 - change : change - 1) * 100)
 
 			return [`${symbol}`, `${prices[0]} ${delta} ${percent}%`]
-		} catch (e) {
+		} catch {
 			return ['b3', 'request failed']
 		}
 	})
