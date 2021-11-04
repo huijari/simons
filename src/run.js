@@ -1,6 +1,5 @@
 const bandeco = require('./bandeco')
 const calendar = require('./calendar')
-const correios = require('./correios')
 const dicio = require('./dicio')
 const dolar = require('./dolar')
 const euro = require('./euro')
@@ -28,7 +27,6 @@ async function run({ text }) {
 	const parsers = [
 		bandeco,
 		calendar,
-		correios,
 		dicio,
 		dolar,
 		euro,
