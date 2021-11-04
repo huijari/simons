@@ -9,9 +9,10 @@ const stock = require('./stock')
 const twitter = require('./twitter')
 const vaccine = require('./vaccine')
 const weather = require('./weather')
+const wiki = require('./wiki')
 
 function parserRunner(text) {
-	return async parser => {
+	return async (parser) => {
 		try {
 			return await parser(text)
 		} catch (error) {
@@ -34,7 +35,8 @@ async function run({ text }) {
 		stock,
 		twitter,
 		vaccine,
-		weather
+		weather,
+		wiki,
 	]
 	const promisedResults = parsers.map(runner)
 	const results = await Promise.all(promisedResults)
