@@ -4,6 +4,7 @@ const correios = require('./correios')
 const dicio = require('./dicio')
 const dolar = require('./dolar')
 const euro = require('./euro')
+const fraction = require('./fraction')
 const math = require('./math')
 const stock = require('./stock')
 const twitter = require('./twitter')
@@ -31,6 +32,7 @@ async function run({ text }) {
 		dicio,
 		dolar,
 		euro,
+		fraction,
 		math,
 		stock,
 		twitter,
