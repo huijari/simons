@@ -1,5 +1,6 @@
 const bandeco = require('./bandeco')
 const calendar = require('./calendar')
+const covid = require('./covid')
 const dicio = require('./dicio')
 const dolar = require('./dolar')
 const euro = require('./euro')
@@ -7,7 +8,6 @@ const fraction = require('./fraction')
 const math = require('./math')
 const stock = require('./stock')
 const twitter = require('./twitter')
-const vaccine = require('./vaccine')
 const weather = require('./weather')
 const wiki = require('./wiki')
 
@@ -27,6 +27,7 @@ async function run({ text }) {
 	const parsers = [
 		bandeco,
 		calendar,
+		covid,
 		dicio,
 		dolar,
 		euro,
@@ -34,7 +35,6 @@ async function run({ text }) {
 		math,
 		stock,
 		twitter,
-		vaccine,
 		weather,
 		wiki,
 	]
