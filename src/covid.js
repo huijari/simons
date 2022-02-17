@@ -11,7 +11,7 @@ const parse = async (text) => {
 	const el = dom('dd a')[0]
 	const href = `${url}${el.attribs.href}`
 	const title = el.children[0].children[0].data.replace(/Epi.*n. /, '')
-	return [[`<a href="${href}">${title}</a>`]]
+	return [['covid', `<a href="${href}">${title}</a>`]]
 }
 
 module.exports = parse
